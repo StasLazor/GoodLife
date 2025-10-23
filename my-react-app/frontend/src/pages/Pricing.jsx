@@ -10,7 +10,7 @@ const Pricing = () => {
 
       <section className="pricing-hero">
         <div className="pricing-hero-content">
-          <h1>Choose Your Plan</h1>
+          <h1>Choose <span>Your Plan</span></h1>
           <p>
             Electric various versions have evolved over the years, sometimes by
             accident, sometimes on purpose.

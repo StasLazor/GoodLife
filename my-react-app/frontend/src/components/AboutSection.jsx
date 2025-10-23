@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // 1. ІМПОРТУЙ Link
 import "../styles/about.css";
 
 import aboutImg1 from "../assets/about-2.jpg";
@@ -19,7 +20,12 @@ const AboutSection = () => {
             confident. At Goodlyfe Gyms, we provide expert guidance and modern
             equipment to support your journey.
           </p>
-          <button className="about-btn">View the FAQ</button>
+
+          {/* 2. ЗАМІНИ <button> НА <Link> */}
+          <Link to="/classes" className="about-btn">
+            View Our Classes
+          </Link>
+
         </div>
       </div>
     </section>
