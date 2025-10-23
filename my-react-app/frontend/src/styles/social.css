@@ -1,0 +1,41 @@
+.social {
+  background: var(--gray-color);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.social h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: var(--light-color);
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.social-link img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+}
+
+.social-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

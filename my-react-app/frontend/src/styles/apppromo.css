@@ -1,0 +1,104 @@
+.app-promo {
+  background: var(--primary-color);
+  color: var(--light-color);
+  padding: 80px 20px 40px;
+}
+
+.app-promo-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.app-promo-content {
+  text-align: left;
+}
+
+.app-promo-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.app-promo-content p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: white;
+}
+
+.app-promo-content span {
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.app-store-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.app-store-buttons img {
+  height: 45px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+
+.app-store-buttons a:hover img {
+  opacity: 0.8;
+}
+
+.app-promo-images {
+  position: relative;
+  min-height: 450px;
+}
+
+.app-promo-images img {
+  position: absolute;
+  width: 280px;
+  height: auto;
+}
+
+.phone-1 {
+  width: 300px;
+  z-index: 2;
+  bottom: 0;
+  left: 10%;
+}
+
+.phone-2 {
+  width: 260px;
+  z-index: 1;
+  bottom: -40px;
+  right: -5%;
+}
+
+@media (max-width: 768px) {
+  .app-promo-container {
+    grid-template-columns: 1fr;
+  }
+
+  .app-promo-content {
+    text-align: center;
+  }
+
+  .app-store-buttons {
+    justify-content: center;
+  }
+
+  .app-promo-images {
+    margin-top: 40px;
+    min-height: 450px;
+  }
+
+  .phone-1 {
+    left: 5%;
+  }
+  .phone-2 {
+    right: 5%;
+  }
+}
