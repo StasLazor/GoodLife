@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // 1. ІМПОРТУЙ Link
 import "../styles/facilities.css";
 
 import facilityImg1 from "../assets/facilities-1.jpg";
@@ -11,13 +12,21 @@ const FacilitiesSection = () => {
         <div className="facilities-content">
           <h2>Premium Facilities</h2>
           <p>
-            Experience the full benefits of our premium equipment, designed to cater to every fitness level. Our state-of-the-art 
-            cardio zone features the latest treadmills, ellipticals, and bikes, complete with interactive tracking. Push your limits 
-            in our extensive free-weights area, fully stocked with everything from dumbbells to power racks. We also offer specialized 
-            functional training zones, a high-intensity CrossFit studio, and a serene room for yoga and meditation. Your journey to your 
-            goals starts here.
+            Experience the full benefits of our premium equipment, designed to
+            cater to every fitness level. Our state-of-the-art cardio zone
+            features the latest treadmills, ellipticals, and bikes, complete
+            with interactive tracking. Push your limits in our extensive
+            free-weights area, fully stocked with everything from dumbbells to
+            power racks. We also offer specialized functional training zones, a
+            high-intensity CrossFit studio, and a serene room for yoga and
+            meditation. Your journey to your goals starts here.
           </p>
-          <button className="facilities-btn">Learn more</button>
+          
+          {/* 2. ЗАМІНИ <button> НА <Link> */}
+          <Link to="/pricing" className="facilities-btn">
+            Learn more
+          </Link>
+
         </div>
         <div className="facilities-images">
           <img

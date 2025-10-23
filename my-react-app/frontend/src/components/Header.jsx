@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/header.css";
 
 const Header = () => {
@@ -18,45 +19,62 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
-      <div className="logo">Goodlyfe Gyms</div>
+    <>
+      <header className="header">
+        <Link to="/" className="logo">
+          Goodlyfe Gyms
+        </Link>
 
-      <nav className={isMobileMenuOpen ? "nav nav-open" : "nav"}>
+        <nav className={isMobileMenuOpen ? "nav nav-open" : "nav"}>
+          <button
+            className="nav-close-btn"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            &times;
+          </button>
+
+          <a href="#about" onClick={(e) => handleScroll(e, "#about")}>
+            About
+          </a>
+          <a
+            href="#facilities"
+            onClick={(e) => handleScroll(e, "#facilities")}
+          >
+            Facilities
+          </a>
+          <a
+            href="#testimonials"
+            onClick={(e) => handleScroll(e, "#testimonials")}
+          >
+            Testimonials
+          </a>
+          <a href="#app" onClick={(e) => handleScroll(e, "#app")}>
+            App
+          </a>
+          <Link
+            to="/login"
+            className="join-btn"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Join Now
+          </Link>
+        </nav>
+
         <button
-          className="nav-close-btn"
-          onClick={() => setMobileMenuOpen(false)}
+          className="nav-toggle-btn"
+          onClick={() => setMobileMenuOpen(true)}
         >
-          &times;
+          &#9776;
         </button>
+      </header>
 
-        <a href="#about" onClick={(e) => handleScroll(e, "#about")}>
-          About
-        </a>
-        <a
-          href="#facilities"
-          onClick={(e) => handleScroll(e, "#facilities")}
-        >
-          Facilities
-        </a>
-        <a
-          href="#testimonials"
-          onClick={(e) => handleScroll(e, "#testimonials")}
-        >
-          Testimonials
-        </a>
-        <a href="#app" onClick={(e) => handleScroll(e, "#app")}>
-          App
-        </a>
-        <button className="join-btn">Join Now</button>
-      </nav>
-
-      <button
-        className="nav-toggle-btn"
-        onClick={() => setMobileMenuOpen(true)}
-      >
-        &#9776;
-      </button>
-    </header>
+      <div
+        className={
+          isMobileMenuOpen ? "menu-overlay overlay-open" : "menu-overlay"
+        }
+        onClick={() => setMobileMenuOpen(false)}
+      ></div>
+    </>
   );
 };
 
