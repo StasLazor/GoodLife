@@ -1,9 +1,9 @@
 import React from "react";
-import "../styles/social.css";
+import "./social.css";
 
-import fbIcon from "../assets/icon-facebook.png";
-import ytIcon from "../assets/icon-youtube.png";
-import igIcon from "../assets/icon-instagram.png";
+import fbIcon from "../../assets/icon-facebook.png";
+import ytIcon from "../../assets/icon-youtube.png";
+import igIcon from "../../assets/icon-instagram.png";
 
 const SocialSection = () => {
   return (

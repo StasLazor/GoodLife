@@ -6,7 +6,7 @@
 }
 
 .login-image {
-  background: url("../assets/login-bg.jpg") center/cover no-repeat;
+  background: url("../../assets/login-bg.jpg") center/cover no-repeat;
 }
 
 .login-form-container {

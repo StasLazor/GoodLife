@@ -1,14 +1,15 @@
 import React from "react";
-import Header from "../components/Header";
-import HeroSection from "../components/HeroSection";
-import AboutSection from "../components/AboutSection";
-import MotivationSection from "../components/MotivationSection";
-import FacilitiesSection from "../components/FacilitiesSection";
-import TestimonialsSection from "../components/TestimonialsSection";
-import AppPromoSection from "../components/AppPromoSection";
-import SocialSection from "../components/SocialSection";
-import Footer from "../components/Footer";
-import "../styles/Home.css";
+// Шляхи тепер ведуть у нові папки
+import Header from "../components/Header/Header.jsx";
+import HeroSection from "../components/HeroSection/HeroSection.jsx";
+import AboutSection from "../components/AboutSection/AboutSection.jsx";
+import MotivationSection from "../components/MotivationSection/MotivationSection.jsx";
+import FacilitiesSection from "../components/FacilitiesSection/FacilitiesSection.jsx";
+import TestimonialsSection from "../components/TestimonialsSection/TestimonialsSection.jsx";
+import AppPromoSection from "../components/AppPromoSection/AppPromoSection.jsx";
+import SocialSection from "../components/SocialSection/SocialSection.jsx";
+import Footer from "../components/Footer/Footer.jsx";
+import "../styles/Home.css"; // Цей залишається, бо це стиль сторінки
 
 const Home = () => {
   return (

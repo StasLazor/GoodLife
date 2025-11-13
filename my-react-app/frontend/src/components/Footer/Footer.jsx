@@ -1,12 +1,12 @@
 import React from "react";
-import "../styles/footer.css";
+import "./footer.css";
 
-import igIcon from "../assets/icon-instagram.png";
-import twIcon from "../assets/icon-twitter.png";
-import ytIcon from "../assets/icon-youtube.png";
-import emailIcon from "../assets/icon-email.png";
-import phoneIcon from "../assets/icon-phone.png";
-import locationIcon from "../assets/icon-location.png";
+import igIcon from "../../assets/icon-instagram.png";
+import twIcon from "../../assets/icon-twitter.png";
+import ytIcon from "../../assets/icon-youtube.png";
+import emailIcon from "../../assets/icon-email.png";
+import phoneIcon from "../../assets/icon-phone.png";
+import locationIcon from "../../assets/icon-location.png";
 
 const Footer = () => {
   return (

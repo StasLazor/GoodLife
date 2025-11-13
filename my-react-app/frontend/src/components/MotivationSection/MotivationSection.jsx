@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/motivation.css";
+import "./motivation.css";
 
 const MotivationSection = () => {
   return (

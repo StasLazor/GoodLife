@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom"; // 1. ІМПОРТУЙ Link
-import "../styles/about.css";
+import { Link } from "react-router-dom";
+import "./about.css";
 
-import aboutImg1 from "../assets/about-2.jpg";
-import aboutImg2 from "../assets/about-1.jpg";
+import aboutImg1 from "../../assets/about-2.jpg";
+import aboutImg2 from "../../assets/about-1.jpg";
 
 const AboutSection = () => {
   return (
@@ -21,8 +21,7 @@ const AboutSection = () => {
             equipment to support your journey.
           </p>
 
-          {/* 2. ЗАМІНИ <button> НА <Link> */}
-          <Link to="/classes" className="about-btn">
+          <Link to="/classes" className="about-btn">{/* марштрут через реакт роутер */}
             View Our Classes
           </Link>
 

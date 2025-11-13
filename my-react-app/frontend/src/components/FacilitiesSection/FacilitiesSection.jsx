@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom"; // 1. ІМПОРТУЙ Link
-import "../styles/facilities.css";
+import "./facilities.css";
 
-import facilityImg1 from "../assets/facilities-1.jpg";
-import facilityImg2 from "../assets/facilities-2.jpg";
+import facilityImg1 from "../../assets/facilities-1.jpg";
+import facilityImg2 from "../../assets/facilities-2.jpg";
 
 const FacilitiesSection = () => {
   return (
@@ -22,8 +22,7 @@ const FacilitiesSection = () => {
             meditation. Your journey to your goals starts here.
           </p>
           
-          {/* 2. ЗАМІНИ <button> НА <Link> */}
-          <Link to="/pricing" className="facilities-btn">
+          <Link to="/pricing" className="facilities-btn">{/* марштрут через реакт роутер */}
             Learn more
           </Link>
 

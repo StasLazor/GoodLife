@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/apppromo.css";
+import "./apppromo.css";
 
-import phoneImg1 from "../assets/app-phone-1.png";
-import phoneImg2 from "../assets/app-phone-2.png";
-import googlePlayImg from "../assets/app-google-play.png";
-import appStoreImg from "../assets/app-app-store.png";
+import phoneImg1 from "../../assets/app-phone-1.png";
+import phoneImg2 from "../../assets/app-phone-2.png";
+import googlePlayImg from "../../assets/app-google-play.png";
+import appStoreImg from "../../assets/app-app-store.png";
 
 const AppPromoSection = () => {
   return (

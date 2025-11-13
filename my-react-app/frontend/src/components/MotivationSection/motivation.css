@@ -1,6 +1,6 @@
 .motivation {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../assets/motivation-bg.jpg") center/cover no-repeat;
+    url("../../assets/motivation-bg.jpg") center/cover no-repeat;
   color: var(--light-color);
   height: 98vh;
   display: flex;

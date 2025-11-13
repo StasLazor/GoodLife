@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/header.css";
+import "./header.css";
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,11 +51,7 @@ const Header = () => {
           <a href="#app" onClick={(e) => handleScroll(e, "#app")}>
             App
           </a>
-          <Link
-            to="/login"
-            className="join-btn"
-            onClick={() => setMobileMenuOpen(false)}
-          >
+          <Link to="/login" className="join-btn" onClick={() => setMobileMenuOpen(false)}> {/* марштрут через реакт роутер */}
             Join Now
           </Link>
         </nav>

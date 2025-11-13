@@ -1,9 +1,9 @@
 import React from "react";
-import "../styles/testimonials.css";
+import "./testimonials.css";
 
-import testimonialImg1 from "../assets/testimonial-1.jpg";
-import testimonialImg2 from "../assets/testimonial-2.jpg";
-import testimonialImg3 from "../assets/testimonial-3.jpg";
+import testimonialImg1 from "../../assets/testimonial-1.jpg";
+import testimonialImg2 from "../../assets/testimonial-2.jpg";
+import testimonialImg3 from "../../assets/testimonial-3.jpg";
 
 const TestimonialsSection = () => {
   return (
