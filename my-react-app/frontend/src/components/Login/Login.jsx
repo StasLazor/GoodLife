@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 import "./login.css";
 
 const Login = () => {
+  //Стейт для зберігання введених даних
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  //Отримуємо логіку з нашого хука
+  const { loginUser, loading, error } = useAuth();
+
+  //Функція обробки відправки форми
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+        await loginUser(email, password);
+    } catch (e) {
+        console.error("Помилка входу");
+    }
+  };
+
   return (
     <div className="login-page">
       <div className="login-image"></div>
@@ -13,17 +31,34 @@ const Login = () => {
           </Link>
           <h2>Welcome Back</h2>
 
-          <form>
+          {error && <div style={{ color: "red", marginBottom: "10px" }}>{error}</div>}
+
+          <form onSubmit={handleSubmit}>
             <div className="input-group">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
             <div className="input-group">
               <label htmlFor="password">Password</label>
-              <input type="password" id="password" name="password" />
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
             </div>
-            <button type="submit" className="login-btn">
-              LOG IN
+            
+            <button type="submit" className="login-btn" disabled={loading}>
+              {loading ? "LOADING..." : "LOG IN"}
             </button>
           </form>
 
