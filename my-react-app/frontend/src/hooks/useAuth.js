@@ -1,19 +1,18 @@
 import { useState } from "react";
 // Імпортуємо методи з Firebase
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { auth } from "../firebase"; // Імпортуємо наш файл налаштувань
+import { auth } from "../firebase";
 
 export const useAuth = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // --- ЛОГІН ---
   const loginUser = async (email, password) => {
     setLoading(true);
     setError(null);
 
     try {
-      // Цей один рядок робить всю магію: перевіряє юзера в базі Firebase
+      // перевірка юзера в базі Firebase
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
@@ -49,16 +48,5 @@ export const useAuth = () => {
     }
   };
 
-  // --- ВИХІД (LOGOUT) ---
-  // Це бонус, але корисний для повноти картини
-  const logoutUser = async () => {
-    try {
-      await signOut(auth);
-      alert("Ви вийшли з системи");
-    } catch (err) {
-      console.error("Помилка при виході:", err);
-    }
-  };
-
-  return { loginUser, logoutUser, loading, error };
+  return { loginUser, loading, error };
 };
