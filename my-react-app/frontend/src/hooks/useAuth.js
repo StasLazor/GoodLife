@@ -1,48 +1,64 @@
 import { useState } from "react";
+// Імпортуємо методи з Firebase
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { auth } from "../firebase"; // Імпортуємо наш файл налаштувань
 
 export const useAuth = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Функція для логіну
+  // --- ЛОГІН ---
   const loginUser = async (email, password) => {
     setLoading(true);
     setError(null);
 
     try {
-      // Робимо запит на тестовий сервер
-      const response = await fetch("https://reqres.in/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": "reqres-free-v1"
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        // Якщо сервер повернув помилку
-        throw new Error(data.error || "Помилка авторизації");
-      }
+      // Цей один рядок робить всю магію: перевіряє юзера в базі Firebase
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
 
       setLoading(false);
-      console.log("Успішний логін! Токен:", data.token);
-      alert("Ви успішно увійшли! Токен: " + data.token);
+      console.log("Успішний вхід:", user);
       
+      // Отримуємо токен (Firebase генерує його сам)
+      const token = await user.getIdToken();
       
-      return data;
+      alert(`Успішний вхід через Firebase! Email: ${user.email}`);
+      
+      // Повертаємо об'єкт юзера
+      return user;
 
     } catch (err) {
       setLoading(false);
-      setError(err.message);
+      console.error(err);
+
+      // Обробляємо помилки Firebase, щоб вивести зрозумілий текст
+      let errorMessage = "Помилка авторизації";
+      
+      // Firebase повертає специфічні коди помилок
+      if (err.code === 'auth/invalid-credential' || err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password') {
+        errorMessage = "Невірний email або пароль";
+      } else if (err.code === 'auth/too-many-requests') {
+        errorMessage = "Забагато спроб. Спробуйте пізніше.";
+      } else if (err.code === 'auth/invalid-email') {
+        errorMessage = "Некоректний формат email";
+      }
+      
+      setError(errorMessage);
       throw err;
     }
   };
 
-  return { loginUser, loading, error };
+  // --- ВИХІД (LOGOUT) ---
+  // Це бонус, але корисний для повноти картини
+  const logoutUser = async () => {
+    try {
+      await signOut(auth);
+      alert("Ви вийшли з системи");
+    } catch (err) {
+      console.error("Помилка при виході:", err);
+    }
+  };
+
+  return { loginUser, logoutUser, loading, error };
 };
