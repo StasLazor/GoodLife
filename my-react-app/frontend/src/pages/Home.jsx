@@ -1,5 +1,4 @@
 import React from "react";
-// Шляхи тепер ведуть у нові папки
 import Header from "../components/Header/Header.jsx";
 import HeroSection from "../components/HeroSection/HeroSection.jsx";
 import AboutSection from "../components/AboutSection/AboutSection.jsx";
@@ -9,7 +8,7 @@ import TestimonialsSection from "../components/TestimonialsSection/TestimonialsS
 import AppPromoSection from "../components/AppPromoSection/AppPromoSection.jsx";
 import SocialSection from "../components/SocialSection/SocialSection.jsx";
 import Footer from "../components/Footer/Footer.jsx";
-import "../styles/Home.css"; // Цей залишається, бо це стиль сторінки
+import "../styles/Home.css";
 
 const Home = () => {
   return (

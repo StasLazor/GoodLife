@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // 1. ІМПОРТУЙ Link
+import { Link } from "react-router-dom";
 import "./facilities.css";
 
 import facilityImg1 from "../../assets/facilities-1.jpg";

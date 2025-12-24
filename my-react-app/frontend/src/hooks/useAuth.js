@@ -1,5 +1,4 @@
 import { useState } from "react";
-// Імпортуємо методи з Firebase
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../firebase";
 
@@ -19,7 +18,7 @@ export const useAuth = () => {
       setLoading(false);
       console.log("Успішний вхід:", user);
       
-      // Отримуємо токен (Firebase генерує його сам)
+      // Отримуємо токен
       const token = await user.getIdToken();
       
       alert(`Успішний вхід через Firebase! Email: ${user.email}`);
@@ -31,7 +30,7 @@ export const useAuth = () => {
       setLoading(false);
       console.error(err);
 
-      // Обробляємо помилки Firebase, щоб вивести зрозумілий текст
+      // Обробляємо помилки Firebase
       let errorMessage = "Помилка авторизації";
       
       // Firebase повертає специфічні коди помилок

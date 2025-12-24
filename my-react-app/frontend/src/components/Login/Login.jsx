@@ -8,7 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  //Отримуємо логіку з нашого хука
+  //логіка з хука
   const { loginUser, loading, error } = useAuth();
 
   //Функція обробки відправки форми
